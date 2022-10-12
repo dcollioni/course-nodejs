@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeJS Course by Douglas Collioni</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prism.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>NodeJS Course</h1>
+      <p>by <a href="https://dcollioni.github.io/" target="_blank">Douglas Collioni</a></p>
+    </header>
+    <section>
+      <header>
+        <h2>Content table</h2>
+      </header>
+      <div class="content">
+        <ol>
+          <li><a href="#overview">Overview</a>
+            <ol>
+              <li><a href="#overview-intro">Intro</a></li>
+              <li><a href="#overview-installation">Installation</a></li>
+              <li><a href="#overview-running">Running</a></li>
+              <li><a href="#overview-running-server">Running Server</a></li>
+              <li><a href="#overview-modules">Modules</a></li>
+              <li><a href="#overview-http">HTTP</a></li>
+              <li><a href="#overview-fs">FS (File System)</a></li>
+            </ol>
+          </li>
+          <li><a href="#npm">NPM</a>
+            <ol>
+              <li><a href="#npm-intro">Intro</a></li>
+              <li><a href="#npm-download">Download a Package</a></li>
+              <li><a href="#npm-use">Use a Downloaded Package</a></li>
+              <li><a href="#npm-package-json">Package.json</a></li>
+            </ol>
+          </li>
+          <li><a href="#express">Express</a>
+            <ol>
+              <li><a href="#express-intro">Intro</a></li>
+              <li><a href="#express-app-generator">App Generator</a></li>
+              <li><a href="#express-basic-routing">Basic Routing</a></li>
+              <li><a href="#express-static-files">Static Files</a></li>
+              <li><a href="#express-advanced-routing">Advanced Routing</a></li>
+              <li><a href="#express-middlewares">Middlewares</a></li>
+              <li><a href="#express-body-parser">Body Parser</a></li>
+            </ol>
+          </li>
+          <li><a href="#mongodb">MongoDB</a></li>
+          <li><a href="#unit-tests">Unit Tests</a></li>
+          <li><a href="#deploy">Deploy</a></li>
+        </ol>
+      </div>
+    </section>
+    <section id="overview">
+      <header>
+        <h2>Overview</h2>
+      </header>
+      <div class="content">
+        <section id="overview-intro">
+          <header>
+            <h3>Intro</h3>
+          </header>
+          <div class="content">
+            <div>
+              <h4>What's Node.js?</h4>
+              <ul>
+                <li>Node.js is an open source server framework</li>
+                <li>Node.js is free</li>
+                <li>Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)</li>
+                <li>Node.js uses JavaScript on the server</li>
+              </ul>
+            </div>
+            <hr>
+            <div>
+              <h4>Why Node.js?</h4>
+              <ul>
+                <li>Node.js uses asynchronous programming</li>
+              </ul>
+              <h4>Scenario: server must open a file and return the content to the client</h4>
+              <p>PHP, Java, C# execution:</p>
+              <ol>
+                <li>Sends the task to the computer's file system</li>
+                <li>Waits while the file system opens and reads the file</li>
+                <li>Returns the content to the client</li>
+                <li>Ready to handle the next request</li>
+              </ol>
+              <p>Node.js execution:</p>
+              <ol>
+                <li>Sends the task to the computer's file system</li>
+                <li>Ready to handle the next request</li>
+                <li>When the file system has opened and read the file, the server returns the
+                  content to the client</li>
+              </ol>
+              </p>
+            </div>
+            <hr>
+            <div>
+              <h4>What can Node.js do?</h4>
+              <ul>
+                <li>Generate dynamic page content</li>
+                <li>Create, open, read, write, delete, and close files on the server</li>
+                <li>Collect form data</li>
+                <li>Add, delete, modify data in your database</li>
+              </ul>
+            </div>
+            <hr>
+            <div>
+              <h4>What is a Node.js file?</h4>
+              <ul>
+                <li>Node.js files contain tasks that will be executed on certain events</li>
+                <li>A typical event is someone trying to access a port on the server</li>
+                <li>Node.js files must be initiated on the server before having any effect</li>
+                <li>Node.js files have the extension ".js"</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="overview-installation">
+          <header>
+            <h3>Installation</h3>
+          </header>
+          <div class="content">
+            <p>The official Node.js website has installation instructions for Node.js:</p>
+            <p>
+              <a href="http://nodejs.org" target="_blank">nodejs.org</a>
+            </p>
+          </div>
+        </section>
+        <section id="overview-running">
+          <header>
+            <h3>Running</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>Node.js files must be initiated on a Command Line Interface program such as:</p>
+              <ul>
+                <li>Command Prompt (cmd)</li>
+                <li>Git Bash</li>
+                <li>PowerShell</li>
+                <li>Terminal</li>
+              </ul>
+            </div>
+            <hr>
+            <div>
+              <h4>Hello world</h4>
+              <p>To get started, create a folder for your code:</p>
+              <pre><code class="language-sh">mkdir ~/dev/nodejs</code></pre>
+              <p>Navigate to the folder:</p>
+              <pre><code class="language-sh">cd ~/dev/nodejs</code></pre>
+              <p>Initiate Visual Studio Code in this folder:</p>
+              <pre><code class="language-sh">code .</code></pre>
+              <p>Create a new file named "hello.js":</p>
+              <pre><code class="language-sh">touch hello.js</code></pre>
+              <p>Write the following "hello world" JavaScript code in it:</p>
+              <pre><code class="language-js">console.log('Hello world!')</code></pre>
+              <p>Run the code using node:</p>
+              <pre><code class="language-sh">node hello.js</code></pre>
+              <p>"Hello world!" should be printed on the console.</p>
+            </div>
+          </div>
+        </section>
+        <section id="overview-running-server">
+          <header>
+            <h3>Running Server</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>Create a new file named "server.js" with the following code:</p>
+<pre><code class="language-js">const http = require('http')
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' })
+  res.end('Hello world!')
+}).listen(8080)</code></pre>
+              <p>Run the server using node:</p>
+              <pre><code class="language-sh">node server.js</code></pre>
+              <p>This command is going to start a server on the localhost, port 8080.</p>
+              <p>Access the server on <a href="http://localhost:8080" target="_blank">localhost:8080</a> and check the "Hello world!" text is displayed.</p>
+              <p class="note">Don't worry about the code syntax in this example for now. We will go through it in detail later on in the course.</p>
+            </div>
+          </div>
+        </section>
+        <section id="overview-modules">
+          <header>
+            <h3>Modules</h3>
+          </header>
+          <div class="content">
+            <div>
+              <h4>What is a Module in Node.js?</h4>
+              <ul>
+                <li>Modules can be considered the same as JavaScript libraries</li>
+                <li>A set of functions you want to include in your application</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Built-in Modules</h4>
+              <p>
+                Node.js has a set of built-in modules which you can use without any further
+                installation.
+              </p>
+              <p>
+                Look at the <a href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank">Built-in Modules Reference</a> for a complete list of
+                modules.
+              </p>
+            </div>
+            <hr>
+            <div>
+              <h4>Include Modules</h4>
+              <p>To include a module in your application, use the <code class="language-js">require()</code> function with the name of the module:</p>
+              <pre><code class="language-js">const http = require('http')</code></pre>
+              <p>Now the application has access to the HTTP module:</p>
+              <pre><code class="language-js">http.createServer((req, res) => { // ...</code></pre>
+            </div>
+            <hr>
+            <div>
+              <h4>Create your own modules</h4>
+              <p>Custom modules can be created and easily included into the application.</p>
+              <p>Create a file named "myDateTime.js" that returns the current date and time:</p>
+<pre><code class="language-js">exports.myDateTime = () => {
+  return Date()
+}</code></pre>
+              <p>Now you can include and use the module in any of your Node.js files using <code class="language-js">require()</code>:</p>
+<pre><code class="language-js">const dt = require('./myDateTime')
+console.log('myDateTime:', dt.myDateTime())</code></pre>
+              <p>Notice that we use <code class="language-sh">./</code> to locate the module, that means that the module is
+                located in the same folder as the Node.js file.</p>
+            </div>
+            <hr>
+            <div class="exercise">
+              <h4>Try it yourself</h4>
+              <p>Create a module in a new file named "myName.js" containing a function that returns your name as a string.
+                After that, include this module in your application code and print your name using the console.</p>
+            </div>
+          </div>
+        </section>
+        <section id="overview-http">
+          <header>
+            <h3>HTTP</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>Node.js has a built-in module called HTTP, which allows Node.js to transfer
+                data over the Hyper Text Transfer Protocol (HTTP).</p>
+<pre><code class="language-js">const http = require('http')
+
+http.createServer((req, res) => { // create a server object
+  res.write('Hello World!')       // write a response to the client
+  res.end()                       // end the response
+}).listen(8080)                   // the server object listens on port 8080
+</code></pre>
+              <p>If the response from the HTTP server is supposed to be displayed as HTML,
+                you should include an HTTP header with the correct content type:</p>
+<pre><code class="language-js">const http = require('http')
+
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  res.write('Hello World!')
+  res.end()
+}).listen(8080)
+</code></pre>
+              <p>The function passed into the <code class="language-js">http.createServer()</code> has a <code class="language-js">req</code> argument that
+                represents the request from the client.</p>
+              <p>This object has a property called <code class="language-js">url</code> which holds the part of the URL that
+                comes after the domain name:</p>
+<pre><code class="language-js">const http = require('http')
+
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  res.write(req.url)
+  res.end()
+}).listen(8080)
+</code></pre>
+              <p>There are built-in modules to easily split the URL query string into readable parts,
+                such as the URL module:</p>
+<pre><code class="language-js">const http = require('http')
+const url = require('url')
+
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  const q = url.parse(req.url, true).query
+  const txt = q.year + " " + q.month
+  res.end(txt)
+}).listen(8080)
+</code></pre>
+              <p>Run the code above using node, then access your running server passing year and month as query strings:</p>
+              <p><a href="http://localhost:8080?year=2022&month=october" target="_blank">localhost:8080?year=2022&month=october</a></p>
+              <p>The year and month should be displayed on the page.</p>
+            </div>
+            <hr>
+            <div class="exercise">
+              <h4>Try it yourself</h4>
+              <p>Modify the previous server to also display your name using the "myName" module created earlier.</p>
+              <p>Additionaly, modify the server to also read the day from the query string and display it with the year and month.</p>
+            </div>
+          </div>
+        </section>
+        <section id="overview-fs">
+          <header>
+            <h3>FS (File System)</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>The fs module allows you to work with the file system on your computer using node:</p>
+              <pre><code class="language-js">const fs = require('fs')</code></pre>
+              <p>Common uses for the File System module are:</p>
+              <ul>
+                <li>Read files</li>
+                <li>Create files</li>
+                <li>Update files</li>
+                <li>Delete files</li>
+                <li>Rename files</li>
+              </ul>
+              <p>The <code class="language-js">fs.readFile()</code> method is used to read files from your computer:</p>
+<pre><code class="language-js">const http = require('http')
+const fs = require('fs')
+
+http.createServer((req, res) => {
+  fs.readFile('demo.html', (err, data) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' })
+    res.write(data)
+    res.end()
+  })
+}).listen(8080)
+</code></pre>
+              <p>In the example above, a file named "demo.html" is being read from the local disk and written as a HTML response to the client.</p>
+            </div>
+            <hr>
+            <div class="exercise">
+              <h4>Try it yourself</h4>
+              <p>Create a HTTP server to read the <code class="language-js">pathname</code> from the URL and read a file from the disk with that name.
+              Then return the file contents as HTML to the client. Example:</p>
+              <ul>
+                <li><a href="http://localhost:8080/demo.html" target="_blank">localhost:8080/demo.html</a> --> renders the "demo.html" file</li>
+                <li><a href="http://localhost:8080/home.html" target="_blank">localhost:8080/home.html</a> --> renders the "home.html" file</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="npm">
+      <header>
+        <h2>NPM</h2>
+      </header>
+      <div class="content">
+        <section id="npm-intro">
+          <header>
+            <h3>Intro</h3>
+          </header>
+          <div class="content">
+            <div>
+              <h4>What is NPM?</h4>
+              <ul>
+                <li>NPM stands for Node Package Manager, it is a tool used to install packages on your Node application</li>
+                <li><a href="https://npmjs.com" target="_blank">npmjs.com</a> hosts thousands of free packages to download and use</li>
+                <li>NPM tool is installed on your computer when you install Node.js</li>
+              </ul>
+              <p>For more information, visit <a href="https://docs.npmjs.com/" target="_blank">npm Docs</a>.</p>
+            </div>
+            <hr>
+            <div>
+              <h4>What is a package?</h4>
+              <p>A package in Node.js contains all the files you need for a module.</p>
+              <p>Modules are JavaScript libraries you can add to your project. Examples:</p>
+              <ul>
+                <li>https</li>
+                <li>fs</li>
+                <li>url</li>
+                <li>express</li>
+                <li>mongodb</li>
+                <li>mocha</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="npm-download">
+          <header>
+            <h3>Download a Package</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>Downloading a package using NPM is very easy. Open the command line interface and tell NPM to download the package:</p>
+              <pre><code class="language-sh">npm install upper-case</code></pre>
+              <p>This command is going to download and install the "upper-case" package.</p>
+              <p>NPM creates a folder named "node_modules" where the package will be installed. All packages installed in the future will be placed in this folder.</p>
+            </div>
+          </div>
+        </section>
+        <section id="npm-use">
+          <header>
+            <h3>Use a Downloaded Package</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>Once the package is installed, it is ready to use.</p>
+              <p>Include the "upper-case" package the same way you would include any other module:</p>
+<pre><code class="language-js">const upperCase = require('upper-case')
+
+const text = upperCase('hello world!')
+console.log(text)</code></pre>
+              <p>In the example above, the <code class="language-js">upperCase</code> function is transforming all letters in the string to upper case.</p>
+              <p>When running this code, the console should display "HELLO WORLD!"</p>
+            </div>
+          </div>
+        </section>
+        <section id="npm-package-json">
+          <header>
+            <h3>Package.json</h3>
+          </header>
+          <div class="content">
+            <div>
+              <p>It is a good practice to initialise your application using NPM. You can do that using:</p>
+              <pre><code class="language-sh">npm init</code></pre>
+              <p class="note">You can accept the default values of the wizard.</p>
+              <p>This command will generate a "package.json" file in your application folder.</p>
+              <p>The "package.json" file holds some important information about your application such as name, version, dependencies, scripts, etc.</p>
+            </div>
+            <hr>
+            <div>
+              <h4>Saving dependencies</h4>
+              <p>As soon as your application is initialised and contains a "package.json" file, you can save the installed dependencies:</p>
+              <pre><code class="language-sh">npm install upper-case --save</code></pre>
+              <p>Modules installed using the option <code class="language-sh">--save</code> will be saved in your "package.json" file in the <code class="language-js">"dependencies"</code> section:</p>
+<pre><code class="language-js">"dependencies": {
+  "upper-case": "^2.0.2"
+}</code></pre>
+              <p>It is very important to keep the dependencies saved so other developers can clone your repository and have the same set of modules installed using <code class="language-sh">npm install</code>.</p>
+              <p class="note">The "node_modules" folder in your application should be git ignored. Developers cloning your repo should be able to start woking with it by simply installing the dependencies declared in the "package.json" file.</p>
+            </div>
+            <hr>
+            <div>
+              <h4>Updating and removing dependencies</h4>
+              <p>Dependencies can also be updated and removed using NPM:</p>
+              <pre><code class="language-sh">npm update upper-case --save</code></pre>
+              <pre><code class="language-sh">npm remove upper-case --save</code></pre>
+            </div>
+            <hr>
+            <div>
+              <h4>Scripts</h4>
+              <p>In the package.json file you can declare scripts that can be executed for your
+                project. Example:</p>
+<pre><code class="language-js">"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node index.js"
+}
+</code></pre>
+              <p>Scripts can be run using NPM:</p>
+              <pre><code class="language-sh">npm run start</code></pre>
+              <p class="note">We will explore more examples of scripts later on in this course.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="express">
+      <header>
+        <h2>Express</h2>
+      </header>
+      <div class="content">
+        <section id="express-intro">
+          <header>
+            <h3>Intro</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+        <section id="express-app-generator">
+          <header>
+            <h3>App Generator</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+        <section id="express-basic-routing">
+          <header>
+            <h3>Basic Routing</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+        <section id="express-static-files">
+          <header>
+            <h3>Static Files</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+        <section id="express-advanced-routing">
+          <header>
+            <h3>Advanced Routing</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+        <section id="express-middlewares">
+          <header>
+            <h3>Middlewares</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+        <section id="express-body-parser">
+          <header>
+            <h3>Body Parser</h3>
+          </header>
+          <div class="content"></div>
+        </section>
+      </div>
+    </section>
+    <section id="mongodb">
+      <header>
+        <h2>MongoDB</h2>
+      </header>
+      <div class="content">
+        <p>MongoDB section</p>
+      </div>
+    </section>
+    <section id="unit-tests">
+      <header>
+        <h2>Unit Tests</h2>
+      </header>
+      <div class="content">
+        <p>Unit Tests section</p>
+      </div>
+    </section>
+    <section id="deploy">
+      <header>
+        <h2>Deploy</h2>
+      </header>
+      <div class="content">
+        <p>Deploy section</p>
+      </div>
+    </section>
+  </main>
+  <script src="prism.js"></script>
+</body>
+</html>
