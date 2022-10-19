@@ -469,25 +469,114 @@ console.log(text)</code></pre>
           <header>
             <h3>Intro</h3>
           </header>
-          <div class="content"></div>
+          <div class="content">
+            <div>
+              <p>Express is a fast and minimalist web framework for Node.js.</p>
+              <p>Express can be installed using NPM:</p>
+              <pre><code class="language-sh">npm install express --save</code></pre>
+              <p>Express offers a number of HTTP utility methods and middlewares, making the creation of a robust API quick and easy.</p>
+              <p>For more information, visit <a href="https://expressjs.com/" target="_blank">expressjs.com</a>.</p>
+            </div>
+            <hr>
+            <div>
+              <h4>Hello world</h4>
+              <p>Create a folder for your Express demo application:</p>
+              <pre><code class="language-sh">mkdir express-demo</code></pre>
+              <p>Go into the folder:</p>
+              <pre><code class="language-sh">cd express-demo</code></pre>
+              <p>Initialise NPM:</p>
+              <pre><code class="language-sh">npm init</code></pre>
+              <p>Install Express:</p>
+              <pre><code class="language-sh">npm install express --save</code></pre>
+              <p>Create an entry file:</p>
+              <pre><code class="language-sh">touch index.js</code></pre>
+              <p>Update the "index.js" file with the following code:</p>
+<pre><code class="language-js">const express = require('express')
+const app = express()
+  
+app.get('/', (req, res) => res.send('Hello world!'))
+
+app.listen(3000, () => console.log('app listening on port 3000!'))</code></pre>
+              <p>Run the server:</p>
+              <pre><code class="language-sh">node index.js</code></pre>
+              <p>This example is creating an Express server which runs on <a href="http://localhost:3000/" target="_blank">localhost:3000/</a> and renders a "Hello world!" text on the root ("/") endpoint.</p>
+              <p class="note">Express abstracts the built-in Node.js <code class="language-sh">http</code> module, so that it is much easier to map routes and responses to the API clients.</p>
+            </div>
+          </div>
         </section>
         <section id="express-app-generator">
           <header>
             <h3>App Generator</h3>
           </header>
-          <div class="content"></div>
+          <div class="content">
+            <p>Express offers an application generator tool which quickly creates an app skeleton.</p>
+            <p>For more information, visit <a href="https://expressjs.com/en/starter/generator.html" target="_blank">Express application generator</a>.</p>
+          </div>
         </section>
         <section id="express-basic-routing">
           <header>
             <h3>Basic Routing</h3>
           </header>
-          <div class="content"></div>
+          <div class="content">
+            <div>
+              <p>
+                Routing refers to defining how an application responds to a client request
+                to a particular endpoint, which is a URI (or path) and a specific HTTP request
+                method such as:
+                <ul>
+                  <li>GET</li>
+                  <li>POST</li>
+                  <li>PUT</li>
+                  <li>DELETE, etc</li>
+                </ul>
+              </p>
+              <p>Each route can have one or more handler functions, which are executed
+                when the route is matched.</p>
+              <p>The syntax of a route definition using Express looks like the following:</p>
+              <pre><code class="language-js">app.METHOD('PATH', HANDLER)</code></pre>
+              <p>Examples:</p>
+<pre><code class="language-js">app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.post('/', (req, res) => {
+  res.send('Got a POST request')
+})
+
+app.put('/user', (req, res) => {
+  res.send('Got a PUT request at /user')
+})
+
+app.delete('/user', (req, res) => {
+  res.send('Got a DELETE request at /user')
+})</code></pre>
+            </div>
+          </div>
         </section>
         <section id="express-static-files">
           <header>
             <h3>Static Files</h3>
           </header>
-          <div class="content"></div>
+          <div class="content">
+            <p>To serve static files such as images, CSS files, and JavaScript files, use the
+              <code class="language-js">express.static</code> built-in middleware function from Express.</p>
+            <p>For example, the following code serves images, CSS files, and
+              JavaScript files from a directory named "public":</p>
+            <pre><code class="language-js">app.use(express.static('public'))</code></pre>
+            <p>Now, you could access static files that are in the public directory:</p>
+            <ul>
+              <li>
+                <a href="http://localhost:3000/kitten.jpg" target="_blank">localhost:3000/kitten.jpg</a>
+              </li>
+              <li>
+                <a href="http://localhost:3000/css/style.css" target="_blank">localhost:3000/css/style.css</a>
+              </li>
+              <li>
+                <a href="http://localhost:3000/js/script.js" target="_blank">localhost:3000/js/script.js</a>
+              </li>
+            </ul>
+            <p class="note">Note that if the file does not exist, you will receive a 404 (Not Found) message from the server.</p>
+          </div>
         </section>
         <section id="express-advanced-routing">
           <header>
