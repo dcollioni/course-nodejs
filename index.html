@@ -1,264 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NodeJS Course by Douglas Collioni</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="prism.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
-  <main>
-    <header>
-      <h1>NodeJS Course</h1>
-      <p>by <a href="https://dcollioni.github.io/" target="_blank">Douglas Collioni</a></p>
-    </header>
-    <section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodeJS Course by Douglas Collioni</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
       <header>
-        <h2>Content table</h2>
+        <h1>NodeJS Course</h1>
+        <p>
+          by
+          <a href="https://dcollioni.github.io/" target="_blank"
+            >Douglas Collioni</a
+          >
+        </p>
       </header>
-      <div class="content">
-        <ol>
-          <li><a href="#overview">Overview</a>
-            <ol>
-              <li><a href="#overview-intro">Intro</a></li>
-              <li><a href="#overview-installation">Installation</a></li>
-              <li><a href="#overview-running">Running</a></li>
-              <li><a href="#overview-running-server">Running Server</a></li>
-              <li><a href="#overview-modules">Modules</a></li>
-              <li><a href="#overview-http">HTTP</a></li>
-              <li><a href="#overview-fs">FS (File System)</a></li>
-            </ol>
-          </li>
-          <li><a href="#npm">NPM</a>
-            <ol>
-              <li><a href="#npm-intro">Intro</a></li>
-              <li><a href="#npm-download">Download a Package</a></li>
-              <li><a href="#npm-use">Use a Downloaded Package</a></li>
-              <li><a href="#npm-package-json">Package.json</a></li>
-            </ol>
-          </li>
-          <li><a href="#express">Express</a>
-            <ol>
-              <li><a href="#express-intro">Intro</a></li>
-              <li><a href="#express-app-generator">App Generator</a></li>
-              <li><a href="#express-basic-routing">Basic Routing</a></li>
-              <li><a href="#express-static-files">Static Files</a></li>
-              <li><a href="#express-advanced-routing">Advanced Routing</a></li>
-              <li><a href="#express-middlewares">Middlewares</a></li>
-              <li><a href="#express-body-parser">Body Parser</a></li>
-            </ol>
-          </li>
-          <li><a href="#mongodb">MongoDB</a></li>
-          <li><a href="#unit-tests">Unit Tests</a></li>
-          <li><a href="#deploy">Deploy</a></li>
-        </ol>
-      </div>
-    </section>
-    <section id="overview">
-      <header>
-        <h2>Overview</h2>
-      </header>
-      <div class="content">
-        <section id="overview-intro">
-          <header>
-            <h3>Intro</h3>
-          </header>
-          <div class="content">
-            <div>
-              <h4>What's Node.js?</h4>
-              <ul>
-                <li>Node.js is an open source server framework</li>
-                <li>Node.js is free</li>
-                <li>Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)</li>
-                <li>Node.js uses JavaScript on the server</li>
-              </ul>
+      <section>
+        <header>
+          <h2>Content table</h2>
+        </header>
+        <div class="content">
+          <ol>
+            <li>
+              <a href="#overview">Overview</a>
+              <ol>
+                <li><a href="#overview-intro">Intro</a></li>
+                <li><a href="#overview-installation">Installation</a></li>
+                <li><a href="#overview-running">Running</a></li>
+                <li><a href="#overview-running-server">Running Server</a></li>
+                <li><a href="#overview-modules">Modules</a></li>
+                <li><a href="#overview-http">HTTP</a></li>
+                <li><a href="#overview-fs">FS (File System)</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#npm">NPM</a>
+              <ol>
+                <li><a href="#npm-intro">Intro</a></li>
+                <li><a href="#npm-download">Download a Package</a></li>
+                <li><a href="#npm-use">Use a Downloaded Package</a></li>
+                <li><a href="#npm-package-json">Package.json</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#express">Express</a>
+              <ol>
+                <li><a href="#express-intro">Intro</a></li>
+                <li><a href="#express-app-generator">App Generator</a></li>
+                <li><a href="#express-basic-routing">Basic Routing</a></li>
+                <li><a href="#express-static-files">Static Files</a></li>
+                <li>
+                  <a href="#express-advanced-routing">Advanced Routing</a>
+                </li>
+                <li><a href="#express-middlewares">Middlewares</a></li>
+                <li><a href="#express-body-parser">Body Parser</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#mongodb">MongoDB</a>
+              <ol>
+                <li><a href="#mongodb-intro">Intro</a></li>
+                <li><a href="#mongodb-usage">Usage</a></li>
+                <li><a href="#mongodb-mongoose">Mongoose</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#unit-tests">Unit Tests</a>
+              <ol>
+                <li><a href="#unit-tests-intro">Intro</a></li>
+                <li><a href="#unit-tests-assertions">Assertions</a></li>
+                <li><a href="#unit-tests-scripts">Scripts</a></li>
+                <li>
+                  <a href="#unit-tests-database-testing">Database Testing</a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="overview">
+        <header>
+          <h2>Overview</h2>
+        </header>
+        <div class="content">
+          <section id="overview-intro">
+            <header>
+              <h3>Intro</h3>
+            </header>
+            <div class="content">
+              <div>
+                <h4>What's Node.js?</h4>
+                <ul>
+                  <li>Node.js is an open source server framework</li>
+                  <li>Node.js is free</li>
+                  <li>
+                    Node.js runs on various platforms (Windows, Linux, Unix, Mac
+                    OS X, etc.)
+                  </li>
+                  <li>Node.js uses JavaScript on the server</li>
+                </ul>
+              </div>
+              <hr />
+              <div>
+                <h4>Why Node.js?</h4>
+                <ul>
+                  <li>Node.js uses asynchronous programming</li>
+                </ul>
+                <h4>
+                  Scenario: server must open a file and return the content to
+                  the client
+                </h4>
+                <p>PHP, Java, C# execution:</p>
+                <ol>
+                  <li>Sends the task to the computer's file system</li>
+                  <li>Waits while the file system opens and reads the file</li>
+                  <li>Returns the content to the client</li>
+                  <li>Ready to handle the next request</li>
+                </ol>
+                <p>Node.js execution:</p>
+                <ol>
+                  <li>Sends the task to the computer's file system</li>
+                  <li>Ready to handle the next request</li>
+                  <li>
+                    When the file system has opened and read the file, the
+                    server returns the content to the client
+                  </li>
+                </ol>
+              </div>
+              <hr />
+              <div>
+                <h4>What can Node.js do?</h4>
+                <ul>
+                  <li>Generate dynamic page content</li>
+                  <li>
+                    Create, open, read, write, delete, and close files on the
+                    server
+                  </li>
+                  <li>Collect form data</li>
+                  <li>Add, delete, modify data in your database</li>
+                </ul>
+              </div>
+              <hr />
+              <div>
+                <h4>What is a Node.js file?</h4>
+                <ul>
+                  <li>
+                    Node.js files contain tasks that will be executed on certain
+                    events
+                  </li>
+                  <li>
+                    A typical event is someone trying to access a port on the
+                    server
+                  </li>
+                  <li>
+                    Node.js files must be initiated on the server before having
+                    any effect
+                  </li>
+                  <li>Node.js files have the extension ".js"</li>
+                </ul>
+              </div>
             </div>
-            <hr>
-            <div>
-              <h4>Why Node.js?</h4>
-              <ul>
-                <li>Node.js uses asynchronous programming</li>
-              </ul>
-              <h4>Scenario: server must open a file and return the content to the client</h4>
-              <p>PHP, Java, C# execution:</p>
-              <ol>
-                <li>Sends the task to the computer's file system</li>
-                <li>Waits while the file system opens and reads the file</li>
-                <li>Returns the content to the client</li>
-                <li>Ready to handle the next request</li>
-              </ol>
-              <p>Node.js execution:</p>
-              <ol>
-                <li>Sends the task to the computer's file system</li>
-                <li>Ready to handle the next request</li>
-                <li>When the file system has opened and read the file, the server returns the
-                  content to the client</li>
-              </ol>
+          </section>
+          <section id="overview-installation">
+            <header>
+              <h3>Installation</h3>
+            </header>
+            <div class="content">
+              <p>
+                The official Node.js website has installation instructions for
+                Node.js:
+              </p>
+              <p>
+                <a href="http://nodejs.org" target="_blank">nodejs.org</a>
               </p>
             </div>
-            <hr>
-            <div>
-              <h4>What can Node.js do?</h4>
-              <ul>
-                <li>Generate dynamic page content</li>
-                <li>Create, open, read, write, delete, and close files on the server</li>
-                <li>Collect form data</li>
-                <li>Add, delete, modify data in your database</li>
-              </ul>
+          </section>
+          <section id="overview-running">
+            <header>
+              <h3>Running</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  Node.js files must be initiated on a Command Line Interface
+                  program such as:
+                </p>
+                <ul>
+                  <li>Command Prompt (cmd)</li>
+                  <li>Git Bash</li>
+                  <li>PowerShell</li>
+                  <li>Terminal</li>
+                </ul>
+              </div>
+              <hr />
+              <div>
+                <h4>Hello world</h4>
+                <p>To get started, create a folder for your code:</p>
+                <pre><code class="language-sh">mkdir ~/dev/nodejs</code></pre>
+                <p>Navigate to the folder:</p>
+                <pre><code class="language-sh">cd ~/dev/nodejs</code></pre>
+                <p>Initiate Visual Studio Code in this folder:</p>
+                <pre><code class="language-sh">code .</code></pre>
+                <p>Create a new file named "hello.js":</p>
+                <pre><code class="language-sh">touch hello.js</code></pre>
+                <p>Write the following "hello world" JavaScript code in it:</p>
+                <pre><code class="language-js">console.log('Hello world!')</code></pre>
+                <p>Run the code using node:</p>
+                <pre><code class="language-sh">node hello.js</code></pre>
+                <p>"Hello world!" should be printed on the console.</p>
+              </div>
             </div>
-            <hr>
-            <div>
-              <h4>What is a Node.js file?</h4>
-              <ul>
-                <li>Node.js files contain tasks that will be executed on certain events</li>
-                <li>A typical event is someone trying to access a port on the server</li>
-                <li>Node.js files must be initiated on the server before having any effect</li>
-                <li>Node.js files have the extension ".js"</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section id="overview-installation">
-          <header>
-            <h3>Installation</h3>
-          </header>
-          <div class="content">
-            <p>The official Node.js website has installation instructions for Node.js:</p>
-            <p>
-              <a href="http://nodejs.org" target="_blank">nodejs.org</a>
-            </p>
-          </div>
-        </section>
-        <section id="overview-running">
-          <header>
-            <h3>Running</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>Node.js files must be initiated on a Command Line Interface program such as:</p>
-              <ul>
-                <li>Command Prompt (cmd)</li>
-                <li>Git Bash</li>
-                <li>PowerShell</li>
-                <li>Terminal</li>
-              </ul>
-            </div>
-            <hr>
-            <div>
-              <h4>Hello world</h4>
-              <p>To get started, create a folder for your code:</p>
-              <pre><code class="language-sh">mkdir ~/dev/nodejs</code></pre>
-              <p>Navigate to the folder:</p>
-              <pre><code class="language-sh">cd ~/dev/nodejs</code></pre>
-              <p>Initiate Visual Studio Code in this folder:</p>
-              <pre><code class="language-sh">code .</code></pre>
-              <p>Create a new file named "hello.js":</p>
-              <pre><code class="language-sh">touch hello.js</code></pre>
-              <p>Write the following "hello world" JavaScript code in it:</p>
-              <pre><code class="language-js">console.log('Hello world!')</code></pre>
-              <p>Run the code using node:</p>
-              <pre><code class="language-sh">node hello.js</code></pre>
-              <p>"Hello world!" should be printed on the console.</p>
-            </div>
-          </div>
-        </section>
-        <section id="overview-running-server">
-          <header>
-            <h3>Running Server</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>Create a new file named "server.js" with the following code:</p>
-<pre><code class="language-js">const http = require('http')
+          </section>
+          <section id="overview-running-server">
+            <header>
+              <h3>Running Server</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  Create a new file named "server.js" with the following code:
+                </p>
+                <pre><code class="language-js">const http = require('http')
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' })
   res.end('Hello world!')
 }).listen(8080)</code></pre>
-              <p>Run the server using node:</p>
-              <pre><code class="language-sh">node server.js</code></pre>
-              <p>This command is going to start a server on the localhost, port 8080.</p>
-              <p>Access the server on <a href="http://localhost:8080" target="_blank">localhost:8080</a> and check the "Hello world!" text is displayed.</p>
-              <p class="note">Don't worry about the code syntax in this example for now. We will go through it in detail later on in the course.</p>
+                <p>Run the server using node:</p>
+                <pre><code class="language-sh">node server.js</code></pre>
+                <p>
+                  This command is going to start a server on the localhost, port
+                  8080.
+                </p>
+                <p>
+                  Access the server on
+                  <a href="http://localhost:8080" target="_blank"
+                    >localhost:8080</a
+                  >
+                  and check the "Hello world!" text is displayed.
+                </p>
+                <p class="note">
+                  Don't worry about the code syntax in this example for now. We
+                  will go through it in detail later on in the course.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
-        <section id="overview-modules">
-          <header>
-            <h3>Modules</h3>
-          </header>
-          <div class="content">
-            <div>
-              <h4>What is a Module in Node.js?</h4>
-              <ul>
-                <li>Modules can be considered the same as JavaScript libraries</li>
-                <li>A set of functions you want to include in your application</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Built-in Modules</h4>
-              <p>
-                Node.js has a set of built-in modules which you can use without any further
-                installation.
-              </p>
-              <p>
-                Look at the <a href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank">Built-in Modules Reference</a> for a complete list of
-                modules.
-              </p>
-            </div>
-            <hr>
-            <div>
-              <h4>Include Modules</h4>
-              <p>To include a module in your application, use the <code class="language-js">require()</code> function with the name of the module:</p>
-              <pre><code class="language-js">const http = require('http')</code></pre>
-              <p>Now the application has access to the HTTP module:</p>
-              <pre><code class="language-js">http.createServer((req, res) => { // ...</code></pre>
-            </div>
-            <hr>
-            <div>
-              <h4>Create your own modules</h4>
-              <p>Custom modules can be created and easily included into the application.</p>
-              <p>Create a file named "myDateTime.js" that returns the current date and time:</p>
-<pre><code class="language-js">exports.myDateTime = () => {
+          </section>
+          <section id="overview-modules">
+            <header>
+              <h3>Modules</h3>
+            </header>
+            <div class="content">
+              <div>
+                <h4>What is a Module in Node.js?</h4>
+                <ul>
+                  <li>
+                    Modules can be considered the same as JavaScript libraries
+                  </li>
+                  <li>
+                    A set of functions you want to include in your application
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>Built-in Modules</h4>
+                <p>
+                  Node.js has a set of built-in modules which you can use
+                  without any further installation.
+                </p>
+                <p>
+                  Look at the
+                  <a
+                    href="https://www.w3schools.com/nodejs/ref_modules.asp"
+                    target="_blank"
+                    >Built-in Modules Reference</a
+                  >
+                  for a complete list of modules.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h4>Include Modules</h4>
+                <p>
+                  To include a module in your application, use the
+                  <code class="language-js">require()</code> function with the
+                  name of the module:
+                </p>
+                <pre><code class="language-js">const http = require('http')</code></pre>
+                <p>Now the application has access to the HTTP module:</p>
+                <pre><code class="language-js">http.createServer((req, res) => { // ...</code></pre>
+              </div>
+              <hr />
+              <div>
+                <h4>Create your own modules</h4>
+                <p>
+                  Custom modules can be created and easily included into the
+                  application.
+                </p>
+                <p>
+                  Create a file named "myDateTime.js" that returns the current
+                  date and time:
+                </p>
+                <pre><code class="language-js">exports.myDateTime = () => {
   return Date()
 }</code></pre>
-              <p>Now you can include and use the module in any of your Node.js files using <code class="language-js">require()</code>:</p>
-<pre><code class="language-js">const dt = require('./myDateTime')
+                <p>
+                  Now you can include and use the module in any of your Node.js
+                  files using <code class="language-js">require()</code>:
+                </p>
+                <pre><code class="language-js">const dt = require('./myDateTime')
 console.log('myDateTime:', dt.myDateTime())</code></pre>
-              <p>Notice that we use <code class="language-sh">./</code> to locate the module, that means that the module is
-                located in the same folder as the Node.js file.</p>
+                <p>
+                  Notice that we use <code class="language-sh">./</code> to
+                  locate the module, that means that the module is located in
+                  the same folder as the Node.js file.
+                </p>
+              </div>
+              <hr />
+              <div class="exercise">
+                <h4>Try it yourself</h4>
+                <p>
+                  Create a module in a new file named "myName.js" containing a
+                  function that returns your name as a string. After that,
+                  include this module in your application code and print your
+                  name using the console.
+                </p>
+              </div>
             </div>
-            <hr>
-            <div class="exercise">
-              <h4>Try it yourself</h4>
-              <p>Create a module in a new file named "myName.js" containing a function that returns your name as a string.
-                After that, include this module in your application code and print your name using the console.</p>
-            </div>
-          </div>
-        </section>
-        <section id="overview-http">
-          <header>
-            <h3>HTTP</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>Node.js has a built-in module called HTTP, which allows Node.js to transfer
-                data over the Hyper Text Transfer Protocol (HTTP).</p>
-<pre><code class="language-js">const http = require('http')
+          </section>
+          <section id="overview-http">
+            <header>
+              <h3>HTTP</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  Node.js has a built-in module called HTTP, which allows
+                  Node.js to transfer data over the Hyper Text Transfer Protocol
+                  (HTTP).
+                </p>
+                <pre><code class="language-js">const http = require('http')
 
 http.createServer((req, res) => { // create a server object
   res.write('Hello World!')       // write a response to the client
   res.end()                       // end the response
 }).listen(8080)                   // the server object listens on port 8080
 </code></pre>
-              <p>If the response from the HTTP server is supposed to be displayed as HTML,
-                you should include an HTTP header with the correct content type:</p>
-<pre><code class="language-js">const http = require('http')
+                <p>
+                  If the response from the HTTP server is supposed to be
+                  displayed as HTML, you should include an HTTP header with the
+                  correct content type:
+                </p>
+                <pre><code class="language-js">const http = require('http')
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
@@ -266,11 +372,18 @@ http.createServer((req, res) => {
   res.end()
 }).listen(8080)
 </code></pre>
-              <p>The function passed into the <code class="language-js">http.createServer()</code> has a <code class="language-js">req</code> argument that
-                represents the request from the client.</p>
-              <p>This object has a property called <code class="language-js">url</code> which holds the part of the URL that
-                comes after the domain name:</p>
-<pre><code class="language-js">const http = require('http')
+                <p>
+                  The function passed into the
+                  <code class="language-js">http.createServer()</code> has a
+                  <code class="language-js">req</code> argument that represents
+                  the request from the client.
+                </p>
+                <p>
+                  This object has a property called
+                  <code class="language-js">url</code> which holds the part of
+                  the URL that comes after the domain name:
+                </p>
+                <pre><code class="language-js">const http = require('http')
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
@@ -278,9 +391,11 @@ http.createServer((req, res) => {
   res.end()
 }).listen(8080)
 </code></pre>
-              <p>There are built-in modules to easily split the URL query string into readable parts,
-                such as the URL module:</p>
-<pre><code class="language-js">const http = require('http')
+                <p>
+                  There are built-in modules to easily split the URL query
+                  string into readable parts, such as the URL module:
+                </p>
+                <pre><code class="language-js">const http = require('http')
 const url = require('url')
 
 http.createServer((req, res) => {
@@ -290,36 +405,57 @@ http.createServer((req, res) => {
   res.end(txt)
 }).listen(8080)
 </code></pre>
-              <p>Run the code above using node, then access your running server passing year and month as query strings:</p>
-              <p><a href="http://localhost:8080?year=2022&month=october" target="_blank">localhost:8080?year=2022&month=october</a></p>
-              <p>The year and month should be displayed on the page.</p>
+                <p>
+                  Run the code above using node, then access your running server
+                  passing year and month as query strings:
+                </p>
+                <p>
+                  <a
+                    href="http://localhost:8080?year=2022&month=october"
+                    target="_blank"
+                    >localhost:8080?year=2022&month=october</a
+                  >
+                </p>
+                <p>The year and month should be displayed on the page.</p>
+              </div>
+              <hr />
+              <div class="exercise">
+                <h4>Try it yourself</h4>
+                <p>
+                  Modify the previous server to also display your name using the
+                  "myName" module created earlier.
+                </p>
+                <p>
+                  Additionaly, modify the server to also read the day from the
+                  query string and display it with the year and month.
+                </p>
+              </div>
             </div>
-            <hr>
-            <div class="exercise">
-              <h4>Try it yourself</h4>
-              <p>Modify the previous server to also display your name using the "myName" module created earlier.</p>
-              <p>Additionaly, modify the server to also read the day from the query string and display it with the year and month.</p>
-            </div>
-          </div>
-        </section>
-        <section id="overview-fs">
-          <header>
-            <h3>FS (File System)</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>The fs module allows you to work with the file system on your computer using node:</p>
-              <pre><code class="language-js">const fs = require('fs')</code></pre>
-              <p>Common uses for the File System module are:</p>
-              <ul>
-                <li>Read files</li>
-                <li>Create files</li>
-                <li>Update files</li>
-                <li>Delete files</li>
-                <li>Rename files</li>
-              </ul>
-              <p>The <code class="language-js">fs.readFile()</code> method is used to read files from your computer:</p>
-<pre><code class="language-js">const http = require('http')
+          </section>
+          <section id="overview-fs">
+            <header>
+              <h3>FS (File System)</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  The fs module allows you to work with the file system on your
+                  computer using node:
+                </p>
+                <pre><code class="language-js">const fs = require('fs')</code></pre>
+                <p>Common uses for the File System module are:</p>
+                <ul>
+                  <li>Read files</li>
+                  <li>Create files</li>
+                  <li>Update files</li>
+                  <li>Delete files</li>
+                  <li>Rename files</li>
+                </ul>
+                <p>
+                  The <code class="language-js">fs.readFile()</code> method is
+                  used to read files from your computer:
+                </p>
+                <pre><code class="language-js">const http = require('http')
 const fs = require('fs')
 
 http.createServer((req, res) => {
@@ -330,212 +466,340 @@ http.createServer((req, res) => {
   })
 }).listen(8080)
 </code></pre>
-              <p>In the example above, a file named "demo.html" is being read from the local disk and written as a HTML response to the client.</p>
+                <p>
+                  In the example above, a file named "demo.html" is being read
+                  from the local disk and written as a HTML response to the
+                  client.
+                </p>
+              </div>
+              <hr />
+              <div class="exercise">
+                <h4>Try it yourself</h4>
+                <p>
+                  Create a HTTP server to read the
+                  <code class="language-js">pathname</code> from the URL and
+                  read a file from the disk with that name. Then return the file
+                  contents as HTML to the client. Example:
+                </p>
+                <ul>
+                  <li>
+                    <a href="http://localhost:8080/demo.html" target="_blank"
+                      >localhost:8080/demo.html</a
+                    >
+                    --> renders the "demo.html" file
+                  </li>
+                  <li>
+                    <a href="http://localhost:8080/home.html" target="_blank"
+                      >localhost:8080/home.html</a
+                    >
+                    --> renders the "home.html" file
+                  </li>
+                </ul>
+              </div>
             </div>
-            <hr>
-            <div class="exercise">
-              <h4>Try it yourself</h4>
-              <p>Create a HTTP server to read the <code class="language-js">pathname</code> from the URL and read a file from the disk with that name.
-              Then return the file contents as HTML to the client. Example:</p>
-              <ul>
-                <li><a href="http://localhost:8080/demo.html" target="_blank">localhost:8080/demo.html</a> --> renders the "demo.html" file</li>
-                <li><a href="http://localhost:8080/home.html" target="_blank">localhost:8080/home.html</a> --> renders the "home.html" file</li>
-              </ul>
+          </section>
+        </div>
+      </section>
+      <section id="npm">
+        <header>
+          <h2>NPM</h2>
+        </header>
+        <div class="content">
+          <section id="npm-intro">
+            <header>
+              <h3>Intro</h3>
+            </header>
+            <div class="content">
+              <div>
+                <h4>What is NPM?</h4>
+                <ul>
+                  <li>
+                    NPM stands for Node Package Manager, it is a tool used to
+                    install packages on your Node application
+                  </li>
+                  <li>
+                    <a href="https://npmjs.com" target="_blank">npmjs.com</a>
+                    hosts thousands of free packages to download and use
+                  </li>
+                  <li>
+                    NPM tool is installed on your computer when you install
+                    Node.js
+                  </li>
+                </ul>
+                <p>
+                  For more information, visit
+                  <a href="https://docs.npmjs.com/" target="_blank">npm Docs</a
+                  >.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h4>What is a package?</h4>
+                <p>
+                  A package in Node.js contains all the files you need for a
+                  module.
+                </p>
+                <p>
+                  Modules are JavaScript libraries you can add to your project.
+                  Examples:
+                </p>
+                <ul>
+                  <li>https</li>
+                  <li>fs</li>
+                  <li>url</li>
+                  <li>express</li>
+                  <li>mongodb</li>
+                  <li>mocha</li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <section id="npm">
-      <header>
-        <h2>NPM</h2>
-      </header>
-      <div class="content">
-        <section id="npm-intro">
-          <header>
-            <h3>Intro</h3>
-          </header>
-          <div class="content">
-            <div>
-              <h4>What is NPM?</h4>
-              <ul>
-                <li>NPM stands for Node Package Manager, it is a tool used to install packages on your Node application</li>
-                <li><a href="https://npmjs.com" target="_blank">npmjs.com</a> hosts thousands of free packages to download and use</li>
-                <li>NPM tool is installed on your computer when you install Node.js</li>
-              </ul>
-              <p>For more information, visit <a href="https://docs.npmjs.com/" target="_blank">npm Docs</a>.</p>
+          </section>
+          <section id="npm-download">
+            <header>
+              <h3>Download a Package</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  Downloading a package using NPM is very easy. Open the command
+                  line interface and tell NPM to download the package:
+                </p>
+                <pre><code class="language-sh">npm install upper-case</code></pre>
+                <p>
+                  This command is going to download and install the "upper-case"
+                  package.
+                </p>
+                <p>
+                  NPM creates a folder named "node_modules" where the package
+                  will be installed. All packages installed in the future will
+                  be placed in this folder.
+                </p>
+              </div>
             </div>
-            <hr>
-            <div>
-              <h4>What is a package?</h4>
-              <p>A package in Node.js contains all the files you need for a module.</p>
-              <p>Modules are JavaScript libraries you can add to your project. Examples:</p>
-              <ul>
-                <li>https</li>
-                <li>fs</li>
-                <li>url</li>
-                <li>express</li>
-                <li>mongodb</li>
-                <li>mocha</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section id="npm-download">
-          <header>
-            <h3>Download a Package</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>Downloading a package using NPM is very easy. Open the command line interface and tell NPM to download the package:</p>
-              <pre><code class="language-sh">npm install upper-case</code></pre>
-              <p>This command is going to download and install the "upper-case" package.</p>
-              <p>NPM creates a folder named "node_modules" where the package will be installed. All packages installed in the future will be placed in this folder.</p>
-            </div>
-          </div>
-        </section>
-        <section id="npm-use">
-          <header>
-            <h3>Use a Downloaded Package</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>Once the package is installed, it is ready to use.</p>
-              <p>Include the "upper-case" package the same way you would include any other module:</p>
-<pre><code class="language-js">const upperCase = require('upper-case')
+          </section>
+          <section id="npm-use">
+            <header>
+              <h3>Use a Downloaded Package</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>Once the package is installed, it is ready to use.</p>
+                <p>
+                  Include the "upper-case" package the same way you would
+                  include any other module:
+                </p>
+                <pre><code class="language-js">const upperCase = require('upper-case')
 
 const text = upperCase('hello world!')
 console.log(text)</code></pre>
-              <p>In the example above, the <code class="language-js">upperCase</code> function is transforming all letters in the string to upper case.</p>
-              <p>When running this code, the console should display "HELLO WORLD!"</p>
+                <p>
+                  In the example above, the
+                  <code class="language-js">upperCase</code> function is
+                  transforming all letters in the string to upper case.
+                </p>
+                <p>
+                  When running this code, the console should display "HELLO
+                  WORLD!"
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
-        <section id="npm-package-json">
-          <header>
-            <h3>Package.json</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>It is a good practice to initialise your application using NPM. You can do that using:</p>
-              <pre><code class="language-sh">npm init</code></pre>
-              <p class="note">You can accept the default values of the wizard.</p>
-              <p>This command will generate a "package.json" file in your application folder.</p>
-              <p>The "package.json" file holds some important information about your application such as name, version, dependencies, scripts, etc.</p>
-            </div>
-            <hr>
-            <div>
-              <h4>Saving dependencies</h4>
-              <p>As soon as your application is initialised and contains a "package.json" file, you can save the installed dependencies:</p>
-              <pre><code class="language-sh">npm install upper-case --save</code></pre>
-              <p>Modules installed using the option <code class="language-sh">--save</code> will be saved in your "package.json" file in the <code class="language-js">"dependencies"</code> section:</p>
-<pre><code class="language-js">"dependencies": {
+          </section>
+          <section id="npm-package-json">
+            <header>
+              <h3>Package.json</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  It is a good practice to initialise your application using
+                  NPM. You can do that using:
+                </p>
+                <pre><code class="language-sh">npm init</code></pre>
+                <p class="note">
+                  You can accept the default values of the wizard.
+                </p>
+                <p>
+                  This command will generate a "package.json" file in your
+                  application folder.
+                </p>
+                <p>
+                  The "package.json" file holds some important information about
+                  your application such as name, version, dependencies, scripts,
+                  etc.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h4>Saving dependencies</h4>
+                <p>
+                  As soon as your application is initialised and contains a
+                  "package.json" file, you can save the installed dependencies:
+                </p>
+                <pre><code class="language-sh">npm install upper-case --save</code></pre>
+                <p>
+                  Modules installed using the option
+                  <code class="language-sh">--save</code> will be saved in your
+                  "package.json" file in the
+                  <code class="language-js">"dependencies"</code> section:
+                </p>
+                <pre><code class="language-js">"dependencies": {
   "upper-case": "^2.0.2"
 }</code></pre>
-              <p>It is very important to keep the dependencies saved so other developers can clone your repository and have the same set of modules installed using <code class="language-sh">npm install</code>.</p>
-              <p class="note">The "node_modules" folder in your application should be git ignored. Developers cloning your repo should be able to start woking with it by simply installing the dependencies declared in the "package.json" file.</p>
-            </div>
-            <hr>
-            <div>
-              <h4>Updating and removing dependencies</h4>
-              <p>Dependencies can also be updated and removed using NPM:</p>
-              <pre><code class="language-sh">npm update upper-case --save</code></pre>
-              <pre><code class="language-sh">npm remove upper-case --save</code></pre>
-            </div>
-            <hr>
-            <div>
-              <h4>Scripts</h4>
-              <p>In the package.json file you can declare scripts that can be executed for your
-                project. Example:</p>
-<pre><code class="language-js">"scripts": {
+                <p>
+                  It is very important to keep the dependencies saved so other
+                  developers can clone your repository and have the same set of
+                  modules installed using
+                  <code class="language-sh">npm install</code>.
+                </p>
+                <p class="note">
+                  The "node_modules" folder in your application should be git
+                  ignored. Developers cloning your repo should be able to start
+                  woking with it by simply installing the dependencies declared
+                  in the "package.json" file.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h4>Updating and removing dependencies</h4>
+                <p>Dependencies can also be updated and removed using NPM:</p>
+                <pre><code class="language-sh">npm update upper-case --save</code></pre>
+                <pre><code class="language-sh">npm remove upper-case --save</code></pre>
+              </div>
+              <hr />
+              <div>
+                <h4>Scripts</h4>
+                <p>
+                  In the package.json file you can declare scripts that can be
+                  executed for your project. Example:
+                </p>
+                <pre><code class="language-js">"scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
   "start": "node index.js"
 }
 </code></pre>
-              <p>Scripts can be run using NPM:</p>
-              <pre><code class="language-sh">npm run start</code></pre>
-              <p class="note">We will explore more examples of scripts later on in this course.</p>
+                <p>Scripts can be run using NPM:</p>
+                <pre><code class="language-sh">npm run start</code></pre>
+                <p class="note">
+                  We will explore more examples of scripts later on in this
+                  course.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <section id="express">
-      <header>
-        <h2>Express</h2>
-      </header>
-      <div class="content">
-        <section id="express-intro">
-          <header>
-            <h3>Intro</h3>
-          </header>
-          <div class="content">
-            <div>
-              <p>Express is a fast and minimalist web framework for Node.js.</p>
-              <p>Express can be installed using NPM:</p>
-              <pre><code class="language-sh">npm install express --save</code></pre>
-              <p>Express offers a number of HTTP utility methods and middlewares, making the creation of a robust API quick and easy.</p>
-              <p>For more information, visit <a href="https://expressjs.com/" target="_blank">expressjs.com</a>.</p>
-            </div>
-            <hr>
-            <div>
-              <h4>Hello world</h4>
-              <p>Create a folder for your Express demo application:</p>
-              <pre><code class="language-sh">mkdir express-demo</code></pre>
-              <p>Go into the folder:</p>
-              <pre><code class="language-sh">cd express-demo</code></pre>
-              <p>Initialise NPM:</p>
-              <pre><code class="language-sh">npm init</code></pre>
-              <p>Install Express:</p>
-              <pre><code class="language-sh">npm install express --save</code></pre>
-              <p>Create an entry file:</p>
-              <pre><code class="language-sh">touch index.js</code></pre>
-              <p>Update the "index.js" file with the following code:</p>
-<pre><code class="language-js">const express = require('express')
+          </section>
+        </div>
+      </section>
+      <section id="express">
+        <header>
+          <h2>Express</h2>
+        </header>
+        <div class="content">
+          <section id="express-intro">
+            <header>
+              <h3>Intro</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  Express is a fast and minimalist web framework for Node.js.
+                </p>
+                <p>Express can be installed using NPM:</p>
+                <pre><code class="language-sh">npm install express --save</code></pre>
+                <p>
+                  Express offers a number of HTTP utility methods and
+                  middlewares, making the creation of a robust API quick and
+                  easy.
+                </p>
+                <p>
+                  For more information, visit
+                  <a href="https://expressjs.com/" target="_blank"
+                    >expressjs.com</a
+                  >.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h4>Hello world</h4>
+                <p>Create a folder for your Express demo application:</p>
+                <pre><code class="language-sh">mkdir express-demo</code></pre>
+                <p>Go into the folder:</p>
+                <pre><code class="language-sh">cd express-demo</code></pre>
+                <p>Initialise NPM:</p>
+                <pre><code class="language-sh">npm init</code></pre>
+                <p>Install Express:</p>
+                <pre><code class="language-sh">npm install express --save</code></pre>
+                <p>Create an entry file:</p>
+                <pre><code class="language-sh">touch index.js</code></pre>
+                <p>Update the "index.js" file with the following code:</p>
+                <pre><code class="language-js">const express = require('express')
 const app = express()
   
 app.get('/', (req, res) => res.send('Hello world!'))
 
 app.listen(3000, () => console.log('app listening on port 3000!'))</code></pre>
-              <p>Run the server:</p>
-              <pre><code class="language-sh">node index.js</code></pre>
-              <p>This example is creating an Express server which runs on <a href="http://localhost:3000/" target="_blank">localhost:3000/</a> and renders a "Hello world!" text on the root ("/") endpoint.</p>
-              <p class="note">Express abstracts the built-in Node.js <code class="language-sh">http</code> module, so that it is much easier to map routes and responses to the API clients.</p>
+                <p>Run the server:</p>
+                <pre><code class="language-sh">node index.js</code></pre>
+                <p>
+                  This example is creating an Express server which runs on
+                  <a href="http://localhost:3000/" target="_blank"
+                    >localhost:3000/</a
+                  >
+                  and renders a "Hello world!" text on the root ("/") endpoint.
+                </p>
+                <p class="note">
+                  Express abstracts the built-in Node.js
+                  <code class="language-sh">http</code> module, so that it is
+                  much easier to map routes and responses to the API clients.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
-        <section id="express-app-generator">
-          <header>
-            <h3>App Generator</h3>
-          </header>
-          <div class="content">
-            <p>Express offers an application generator tool which quickly creates an app skeleton.</p>
-            <p>For more information, visit <a href="https://expressjs.com/en/starter/generator.html" target="_blank">Express application generator</a>.</p>
-          </div>
-        </section>
-        <section id="express-basic-routing">
-          <header>
-            <h3>Basic Routing</h3>
-          </header>
-          <div class="content">
-            <div>
+          </section>
+          <section id="express-app-generator">
+            <header>
+              <h3>App Generator</h3>
+            </header>
+            <div class="content">
               <p>
-                Routing refers to defining how an application responds to a client request
-                to a particular endpoint, which is a URI (or path) and a specific HTTP request
-                method such as:
+                Express offers an application generator tool which quickly
+                creates an app skeleton.
+              </p>
+              <p>
+                For more information, visit
+                <a
+                  href="https://expressjs.com/en/starter/generator.html"
+                  target="_blank"
+                  >Express application generator</a
+                >.
+              </p>
+            </div>
+          </section>
+          <section id="express-basic-routing">
+            <header>
+              <h3>Basic Routing</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  Routing refers to defining how an application responds to a
+                  client request to a particular endpoint, which is a URI (or
+                  path) and a specific HTTP request method such as:
+                </p>
                 <ul>
                   <li>GET</li>
                   <li>POST</li>
                   <li>PUT</li>
                   <li>DELETE, etc</li>
                 </ul>
-              </p>
-              <p>Each route can have one or more handler functions, which are executed
-                when the route is matched.</p>
-              <p>The syntax of a route definition using Express looks like the following:</p>
-              <pre><code class="language-js">app.METHOD('PATH', HANDLER)</code></pre>
-              <p>Examples:</p>
-<pre><code class="language-js">app.get('/', (req, res) => {
+                <p>
+                  Each route can have one or more handler functions, which are
+                  executed when the route is matched.
+                </p>
+                <p>
+                  The syntax of a route definition using Express looks like the
+                  following:
+                </p>
+                <pre><code class="language-js">app.METHOD('PATH', HANDLER)</code></pre>
+                <p>Examples:</p>
+                <pre><code class="language-js">app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
@@ -550,79 +814,753 @@ app.put('/user', (req, res) => {
 app.delete('/user', (req, res) => {
   res.send('Got a DELETE request at /user')
 })</code></pre>
+              </div>
             </div>
-          </div>
-        </section>
-        <section id="express-static-files">
-          <header>
-            <h3>Static Files</h3>
-          </header>
-          <div class="content">
-            <p>To serve static files such as images, CSS files, and JavaScript files, use the
-              <code class="language-js">express.static</code> built-in middleware function from Express.</p>
-            <p>For example, the following code serves images, CSS files, and
-              JavaScript files from a directory named "public":</p>
-            <pre><code class="language-js">app.use(express.static('public'))</code></pre>
-            <p>Now, you could access static files that are in the public directory:</p>
-            <ul>
-              <li>
-                <a href="http://localhost:3000/kitten.jpg" target="_blank">localhost:3000/kitten.jpg</a>
-              </li>
-              <li>
-                <a href="http://localhost:3000/css/style.css" target="_blank">localhost:3000/css/style.css</a>
-              </li>
-              <li>
-                <a href="http://localhost:3000/js/script.js" target="_blank">localhost:3000/js/script.js</a>
-              </li>
-            </ul>
-            <p class="note">Note that if the file does not exist, you will receive a 404 (Not Found) message from the server.</p>
-          </div>
-        </section>
-        <section id="express-advanced-routing">
-          <header>
-            <h3>Advanced Routing</h3>
-          </header>
-          <div class="content"></div>
-        </section>
-        <section id="express-middlewares">
-          <header>
-            <h3>Middlewares</h3>
-          </header>
-          <div class="content"></div>
-        </section>
-        <section id="express-body-parser">
-          <header>
-            <h3>Body Parser</h3>
-          </header>
-          <div class="content"></div>
-        </section>
-      </div>
-    </section>
-    <section id="mongodb">
-      <header>
-        <h2>MongoDB</h2>
-      </header>
-      <div class="content">
-        <p>MongoDB section</p>
-      </div>
-    </section>
-    <section id="unit-tests">
-      <header>
-        <h2>Unit Tests</h2>
-      </header>
-      <div class="content">
-        <p>Unit Tests section</p>
-      </div>
-    </section>
-    <section id="deploy">
-      <header>
-        <h2>Deploy</h2>
-      </header>
-      <div class="content">
-        <p>Deploy section</p>
-      </div>
-    </section>
-  </main>
-  <script src="prism.js"></script>
-</body>
+          </section>
+          <section id="express-static-files">
+            <header>
+              <h3>Static Files</h3>
+            </header>
+            <div class="content">
+              <p>
+                To serve static files such as images, CSS files, and JavaScript
+                files, use the
+                <code class="language-js">express.static</code> built-in
+                middleware function from Express.
+              </p>
+              <p>
+                For example, the following code serves images, CSS files, and
+                JavaScript files from a directory named "public":
+              </p>
+              <pre><code class="language-js">app.use(express.static('public'))</code></pre>
+              <p>
+                Now, you could access static files that are in the public
+                directory:
+              </p>
+              <ul>
+                <li>
+                  <a href="http://localhost:3000/kitten.jpg" target="_blank"
+                    >localhost:3000/kitten.jpg</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost:3000/css/style.css" target="_blank"
+                    >localhost:3000/css/style.css</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost:3000/js/script.js" target="_blank"
+                    >localhost:3000/js/script.js</a
+                  >
+                </li>
+              </ul>
+              <p class="note">
+                Note that if the file does not exist, you will receive a 404
+                (Not Found) message from the server.
+              </p>
+            </div>
+          </section>
+          <section id="express-advanced-routing">
+            <header>
+              <h3>Advanced Routing</h3>
+            </header>
+            <div class="content">
+              <div>
+                <h4>All routes</h4>
+                <p>
+                  There is a special routing method,
+                  <code class="language-js">app.all()</code>, used to load
+                  middleware functions at a path for all HTTP request methods.
+                </p>
+                <pre><code class="language-js">app.all('/secret', (req, res, next) => {
+  console.log('Accessing the secret section ...')
+  next() // pass control to the next handler
+})</code></pre>
+                <p>
+                  In the example above, all HTTP methods reaching the "/secret"
+                  endpoint would be handled by that method.
+                </p>
+              </div>
+              <div>
+                <h4>Route parameters</h4>
+                <p>
+                  Route parameters are named URL segments that are used to
+                  capture the values specified at their position in the URL.
+                </p>
+                <p>
+                  The captured values are populated in the
+                  <code class="language-js">req.params</code> object, with the
+                  name of the route parameter specified in the path as their
+                  respective keys.
+                </p>
+                <pre><code class="language-js">app.get('/users/:userId/books/:bookId', (req, res) => {
+  res.send(req.params)
+})</code></pre>
+                <p>
+                  The route above can be accessed at
+                  <a
+                    href="http://localhost:3000/users/101/books/202/"
+                    target="_blank"
+                    >localhost:3000/users/101/books/202</a
+                  >
+                  and it will respond the params object containing the
+                  <code class="language-js">userId</code> and the
+                  <code class="language-js">bookId</code> properties.
+                </p>
+              </div>
+              <div>
+                <h4>Multiple handlers</h4>
+                <p>
+                  More than one callback function can handle a route (make sure
+                  you specify the next object). For example:
+                </p>
+                <pre><code class="language-js">app.get('/example/b', (req, res, next) => {
+  console.log('response will be sent by the next function')
+  next()
+}, (req, res) => {
+  res.send('Hello from B!')
+})</code></pre>
+                <p>
+                  Access the route above at
+                  <a href="http://localhost:3000/example/b/" target="_blank"
+                    >localhost:3000/example/b</a
+                  >
+                  to check the response and the console logs.
+                </p>
+              </div>
+              <div>
+                <h4>Response methods</h4>
+                <p>
+                  Express provides different methods to respond to a request:
+                </p>
+                <table>
+                  <tr>
+                    <td width="200">
+                      <code class="language-js">res.download()</code>
+                    </td>
+                    <td>Prompts a file to be downloaded</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.end()</code></td>
+                    <td>Ends the response process</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.json()</code></td>
+                    <td>Sends a JSON response</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.jsonp()</code></td>
+                    <td>Sends a JSON response with JSONP support</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.redirect()</code></td>
+                    <td>Redirects the request to another route</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.render()</code></td>
+                    <td>Renders a view template</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.send()</code></td>
+                    <td>Sends a response of various types</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.sendFile()</code></td>
+                    <td>Sends a file as an octet stream</td>
+                  </tr>
+                  <tr>
+                    <td><code class="language-js">res.sendStatus()</code></td>
+                    <td>
+                      Sets the response status code and send its string as body
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <h4>Chainable handlers</h4>
+                <p>
+                  Route handlers can be chained for a route path using the
+                  <code class="language-js">app.route</code> function:
+                </p>
+                <pre><code class="language-js">app.route('/book')
+  .get((req, res) => { res.send('Get a book') })
+  .post((req, res) => { res.send('Add a book') })
+  .put((req, res) => { res.send('Update a book') })
+  .delete((req, res) => { res.send('Delete a book') })</code></pre>
+              </div>
+              <div>
+                <h4>Express router</h4>
+                <p>
+                  The Express router can be used to create modular, mountable
+                  route handlers:
+                </p>
+                <pre><code class="language-js">const express = require('express')
+const app = express()
+const router = express.Router()
+  
+router.get('/', (req, res) => {
+  res.send('Birds home page')
+})
+  
+router.get('/about', (req, res) => {
+  res.send('About birds')
+})
+
+app.use('/birds', router)</code></pre>
+                <p>Try it out:</p>
+                <ul>
+                  <li>
+                    <a href="http://localhost:3000/birds/" target="_blank"
+                      >localhost:3000/birds</a
+                    >
+                  </li>
+                  <li>
+                    <a href="http://localhost:3000/birds/about/" target="_blank"
+                      >localhost:3000/birds/about</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section id="express-middlewares">
+            <header>
+              <h3>Middlewares</h3>
+            </header>
+            <div class="content">
+              <p>
+                Middleware functions are functions that have access to the
+                request object (req), the response object (res), and the next
+                function in the application's request-response cycle.
+              </p>
+              <p>Middleware functions can perform the following tasks:</p>
+              <ul>
+                <li>Execute any code</li>
+                <li>Make changes to the request and the response objects</li>
+                <li>End the request-response cycle</li>
+                <li>Call the next middleware in the stack</li>
+              </ul>
+              <pre><code class="language-js">const requestTime = (req, res, next) => {
+  req.time = new Date()
+  next()
+}
+  
+app.use(requestTime)
+  
+app.get('/', (req, res) => {
+  const { time } = req
+  res.send(`Hello, World! ${time}`)
+})</code></pre>
+              <p>
+                In the example above, the
+                <code class="language-js">requestTime</code> function is a
+                middleware which is being added to all routes by the app. When
+                any route is called, the request object is being updated with a
+                property <code class="language-js">time</code> receiving the
+                current timestamp. The time of the request is then accessible to
+                any route handlers that follow next.
+              </p>
+            </div>
+          </section>
+          <section id="express-body-parser">
+            <header>
+              <h3>Body Parser</h3>
+            </header>
+            <div class="content">
+              <p>
+                Body Parser is a useful middleware module to parse the incoming
+                request bodies before the route handlers. The parsed body is
+                available under the
+                <code class="language-js">req.body</code> property.
+              </p>
+              <p>The Body Parser module can be insalled using NPM:</p>
+              <pre><code class="language-sh">npm install body-parser --save</code></pre>
+              <p>Example of use:</p>
+              <pre><code class="language-js">const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+
+app.post('/login', (req, res) => {
+  const { user, password } = req.body
+  
+  if (user !== 'root' || password !== '1234') {
+    res.sendStatus(403)
+  } else {
+    res.sendStatus(200)
+  }
+})</code></pre>
+              <p>
+                The code example above is adding a generic JSON parser as a
+                top-level middleware, which will parse the bodies of all
+                incoming requests.
+              </p>
+            </div>
+            <div class="exercise">
+              <h4>Try it yourself</h4>
+              <p>
+                Create a HTTP server using Express with a middleware to validate
+                two parameters sent via querystring:
+                <code class="language-js">user</code> and
+                <code class="language-js">password</code>.
+              </p>
+              <p>
+                The access to the "/admin" route must be blocked in case the
+                credentials are different than "admin/1234"
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="mongodb">
+        <header>
+          <h2>MongoDB</h2>
+        </header>
+        <div class="content">
+          <section id="mongodb-intro">
+            <header>
+              <h3>Intro</h3>
+            </header>
+            <div class="content">
+              <div>
+                <p>
+                  The official
+                  <a
+                    href="https://www.mongodb.com/docs/drivers/node/current/"
+                    target="_blank"
+                    >MongoDB NodeJS driver</a
+                  >
+                  provides both callback-based and Promise-based interaction
+                  with MongoDB.
+                </p>
+                <p>
+                  Given that you have created your own project using npm init we
+                  install the mongodb driver and it's dependencies by executing:
+                </p>
+                <pre><code class="language-sh">npm install mongodb --save</code></pre>
+              </div>
+              <div>
+                <h4>Connection</h4>
+                <p>
+                  The following is an example of how to open a connection with a
+                  MongoDB database:
+                </p>
+                <pre><code class="language-js">const { MongoClient } = require('mongodb')
+const url = 'mongodb://localhost:27017'
+const dbName = 'mydb'
+
+MongoClient.connect(url, (err, client) => {
+  console.log('Connected successfully to server')
+  const db = client.db(dbName) // use the db object to perform operations with the database
+  client.close()
+})</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="mongodb-usage">
+            <header>
+              <h3>Usage</h3>
+            </header>
+            <div class="content">
+              <div>
+                <h4>Insert a document</h4>
+                <p>
+                  The following is an example of how to insert a document in a
+                  MongoDB collection:
+                </p>
+                <pre><code class="language-js">const collection = db.collection('users')
+
+const { result } = await collection.insertOne({
+  name: 'John Doe',
+  email: 'john.doe@gmail.com'
+})
+
+console.log(result)</code></pre>
+              </div>
+              <div>
+                <h4>Insert many documents</h4>
+                <p>
+                  The following is an example of how to insert multiple
+                  documents in a MongoDB collection:
+                </p>
+                <pre><code class="language-js">const collection = db.collection('countries')
+
+const { result } = await collection.insertMany([
+  { name: 'Brazil', code: 'BR' },
+  { name: 'Italy', code: 'IT' }
+])
+
+console.log(result)</code></pre>
+              </div>
+              <div>
+                <h4>Find documents</h4>
+                <p>
+                  The following is an example of how to find all documents from
+                  a MongoDB collection:
+                </p>
+                <pre><code class="language-js">const collection = db.collection('users')
+
+const users = await collection.find({}).toArray()
+  
+console.log(users)</code></pre>
+              </div>
+              <div>
+                <h4>Find documents with a query</h4>
+                <p>
+                  The following is an example of how to find documents from a
+                  MongoDB collection with a filter:
+                </p>
+                <pre><code class="language-js">const collection = db.collection('countries')
+
+const query = { code: 'BR' }
+const countries = await collection.find(query).toArray()
+
+console.log(countries)</code></pre>
+              </div>
+              <div>
+                <h4>Update a document</h4>
+                <p>
+                  The following is an example of how to update a document in a
+                  MongoDB collection:
+                </p>
+                <pre><code class="language-js">const collection = db.collection('countries')
+
+const query = { code: 'IT' }
+  
+const { result } = await collection.updateOne(query, {
+  $set: {
+    name: 'Itália'
+  }
+})
+
+console.log(result)</code></pre>
+              </div>
+              <div>
+                <h4>Delete a document</h4>
+                <p>
+                  The following is an example of how to delete a document from a
+                  MongoDB collection:
+                </p>
+                <pre><code class="language-js">const collection = db.collection('users')
+
+const query = { email: 'john.doe@gmail.com' }
+const { result } = await collection.deleteOne(query)
+  
+console.log(result)</code></pre>
+              </div>
+              <div>
+                <h4>Map MongoDB collections</h4>
+                <p>
+                  The following is an example of how to map the collections of a
+                  MongoDB database and return them as asynchronous functions to
+                  be used somewhere else:
+                </p>
+                <pre><code class="language-js">const { MongoClient } = require('mongodb')
+const url = 'mongodb://localhost:27017'
+const dbName = 'mydb'
+  
+const db = async () => (await MongoClient.connect(url)).db(dbName)
+  
+const users = async () => (await db()).collection('users')
+const countries = async () => (await db()).collection('countries')
+  
+module.exports = { users, countries }</code></pre>
+                <p>
+                  The collections can then be used in different modules by
+                  importing the one you need:
+                </p>
+                <pre><code class="language-js">const { users } = require('./mongo')
+
+const run = async () => {
+  const collection = await users()
+  const data = await collection.find({}).toArray()
+  console.log(data)
+}
+  
+run()</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="mongodb-mongoose">
+            <header>
+              <h3>Mongoose</h3>
+            </header>
+            <div class="content">
+              <div>
+                <h4>Intro</h4>
+                <p>
+                  Mongoose is an elegant MongoDB object modeling for NodeJS.
+                </p>
+                <p>
+                  Mongoose provides a straight-forward, schema-based solution to
+                  model your application data. It includes built-in type
+                  casting, validation, query building, business logic hooks and
+                  more, out of the box.
+                </p>
+                <p>Install it using NPM:</p>
+                <pre><code class="language-sh">npm install mongoose --save</code></pre>
+                <p class="note">
+                  There is no need to install the mongodb package separately
+                  because the mongoose package already includes it as a
+                  dependency.
+                </p>
+              </div>
+              <div>
+                <h4>Connection</h4>
+                <p>
+                  The following is an example of how to open a connection using
+                  Mongoose:
+                </p>
+                <pre><code class="language-js">const mongoose = require('mongoose')
+const url = 'mongodb://localhost:27017/mydb'
+const connection = mongoose.connect(url)</code></pre>
+              </div>
+              <div>
+                <h4>Schema and model</h4>
+                <p>
+                  The following is an example of how to define a schema and a
+                  model:
+                </p>
+                <pre><code class="language-js">const countrySchema = mongoose.Schema({
+  name: String,
+  code: String
+})
+  
+const Country = mongoose.model('Country', countrySchema)
+
+const france = new Country({ name: 'France', code: 'FR' })</code></pre>
+              </div>
+              <div>
+                <h4>Insert a document</h4>
+                <p>
+                  The following is an example of how to insert a document using
+                  the defined model:
+                </p>
+                <pre><code class="language-js">const france = new Country({ name: 'France', code: 'FR' })
+const result = await france.save()
+console.log(result)</code></pre>
+              </div>
+              <div>
+                <h4>Find documents</h4>
+                <p>
+                  The following is an example of how to find documents using the
+                  defined model:
+                </p>
+                <pre><code class="language-js">const countries = await Country.find({})
+console.log(countries)
+                  
+const brazil = await Country.findOne({ code: 'BR' })
+console.log(brazil)</code></pre>
+              </div>
+              <div>
+                <h4>Update a document</h4>
+                <p>
+                  The following is an example of how to update a document using
+                  the defined model:
+                </p>
+                <pre><code class="language-js">const brazil = await Country.findOne({ code: 'BR' })
+brazil.name = 'Brasil'
+await brazil.save()</code></pre>
+              </div>
+              <div>
+                <h4>Delete a document</h4>
+                <p>
+                  The following is an example of how to delete a document using
+                  the defined model:
+                </p>
+                <pre><code class="language-js">const italy = await Country.findOne({ code: 'IT' })
+const result = await italy.remove()
+console.log(result)</code></pre>
+              </div>
+              <div>
+                <h4>Schema validators</h4>
+                <pre><code class="language-js">const breakfastSchema = mongoose.Schema({
+  eggs: {
+    type: Number, min: [6, 'Too few eggs'], max: 12
+  },
+  bacon: {
+    type: Number, required: [true, 'Why no bacon?']
+  },
+  drink: {
+    type: String, enum: ['Coffee', 'Tea'],
+    required: function() { return this.bacon > 3; }
+  }
+})
+
+const Breakfast = mongoose.model('Breakfast', breakfastSchema)
+
+const bf = new Breakfast({ eggs: 4, bacon: 2 })
+
+try {
+  await bf.save()
+} catch (err) {
+  console.log(err)
+}
+
+console.log(bf)</code></pre>
+              </div>
+              <div class="exercise">
+                <h4>Try it yourself</h4>
+                <p>
+                  Create a HTTP server using Express with routes to insert,
+                  update, find and delete countries from a MongoDB database.
+                </p>
+                <p>
+                  Test all routes using
+                  <a href="https://www.postman.com/" target="_blank">Postman</a
+                  >.
+                </p>
+                <p>
+                  Try complementing this exercise creating HTML pages to access
+                  these routes and make the CRUD operations with countries.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="unit-tests">
+        <header>
+          <h2>Unit Tests</h2>
+        </header>
+        <div class="content">
+          <section id="unit-tests-intro">
+            <header>
+              <h3>Intro</h3>
+            </header>
+            <div class="content">
+              <p>
+                <a href="https://mochajs.org/" target="_blank">Mocha</a> is a
+                feature-rich JavaScript test framework running on NodeJS and in
+                the browser, making asynchronous testing simple and fun.
+              </p>
+              <p>
+                Mocha tests run serially, allowing for flexible and accurate
+                reporting, while mapping uncaught exceptions to the correct test
+                cases.
+              </p>
+              <p>NPM can be used to install the Mocha package:</p>
+              <pre><code class="language-sh">npm install mocha --save-dev</code></pre>
+              <p class="note">
+                Note we are using the flag
+                <code class="language-sh">--save-dev</code> in this case. That
+                is because Mocha is not necessary for the production app to run,
+                only in development time to run the unit tests.
+              </p>
+            </div>
+          </section>
+          <section id="unit-tests-assertions">
+            <header>
+              <h3>Assertions</h3>
+            </header>
+            <div class="content">
+              <p>
+                Unit tests are written based on assertions. It is a good
+                practice to describe the object and the function being tested.
+                The assertions will then be contained in the description. For
+                example:
+              </p>
+              <pre><code class="language-js">const assert = require('assert')
+
+describe('Array', () => {
+  describe('indexOf()', () => {
+    it('should return -1 when the value is not present', () => {
+      const array = [1, 2, 3]
+      const actual = array.indexOf(4)
+      const expected = -1
+      assert.equal(actual, expected)
+    })
+  })
+})</code></pre>
+              <p>
+                In the example above, we are expecting that the method
+                <code class="language-js">indexOf</code> of the array object
+                will return -1 when the value is not present in the array. We do
+                this by using the
+                <code class="language-js">assert.equal</code> function from the
+                NodeJS assert built-in module.
+              </p>
+              <p class="note">
+                The <code class="language-js">describe</code> and
+                <code class="language-js">it</code> are functions imported from
+                the Mocha package which, when installed, register such functions
+                as NodeJS globals, hence there is no need to require them
+                explicitly.
+              </p>
+              <p>The test above can be executed by running:</p>
+              <pre><code class="language-sh">./node_modules/mocha/bin/mocha</code></pre>
+              <p>The result in the console will look something like:</p>
+              <pre><code class="language-sh">Array
+  #indexOf()
+    √ should return -1 when the value is not present
+1 passing (7ms)</code></pre>
+            </div>
+          </section>
+          <section id="unit-tests-scripts">
+            <header>
+              <h3>Scripts</h3>
+            </header>
+            <div class="content">
+              <p>
+                It is a good practice that the tests are set up in your
+                package.json scripts, for example:
+              </p>
+              <pre><code class="language-js">"scripts": {
+  "test": "mocha"
+}</code></pre>
+              <p>
+                To be able to call mocha like in the script above, you have to
+                install it globally:
+              </p>
+              <pre><code class="language-sh">npm install mocha -g</code></pre>
+              <p>This way you can run the same tests using:</p>
+              <pre><code class="language-sh">npm run test</code></pre>
+            </div>
+          </section>
+          <section id="unit-tests-database-testing">
+            <header>
+              <h3>Database Testing</h3>
+            </header>
+            <div class="content">
+              <p>
+                Sometimes the tests need some preset data to run. Sometimes
+                there is also a need for deleting test data after running the
+                unit tests. This can be achieved by using
+                <code class="language-js">before</code> and
+                <code class="language-js">after</code> functions from Mocha:
+              </p>
+              <pre><code class="language-js">before(async () => {
+  await db.clear()
+  await db.save([tobi, loki, jane])
+})
+  
+describe('#findUsers()', () => {
+  it('responds with matching records', async () => {
+    const users = await db.find({ type: 'User' })
+    users.should.have.length(3)
+  })
+})</code></pre>
+              <p>
+                In the example above, before the tests run, 3 users are created
+                in the database. Then the test is listing the users from the
+                database and checking there is 3 items found.
+              </p>
+              <p class="note">
+                Ideally, there would be an
+                <code class="language-js">after</code> function to do the clean
+                up of the test data as well.
+              </p>
+            </div>
+            <hr />
+            <div class="exercise">
+              <h4>Try it yourself</h4>
+              <p>
+                Create a test to assert that the function that finds countries
+                in the database always returns the correct number of items.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="prism.js"></script>
+  </body>
 </html>
